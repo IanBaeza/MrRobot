@@ -1,0 +1,41 @@
+{% extends 'mrrobotin/base_generic.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container"> 
+  <h2 style="color: rgb(184, 50, 50);">Formulario de Registro</h2>
+  <div class="row col-sm-6">
+      <form action="index.html" method="POST" name="datos" onsubmit="return validarForm()" >
+        <div class="form-group">
+          <label for="usuario" class="letras"><p style="color: rgb(184, 50, 50);">Nombre de Usuario:</p></label>
+          <input type="text" name="usuario" class="form-control" id="usuario" placeholder="Ingresa tu nombre" onkeypress="return soloLetras(event)">
+        </div>
+        <div class="form-group">
+          <label for="numero" class="letras"><p style="color: rgb(184, 50, 50);">Numero Telefónico:</p></label>
+          <input type="number" name="numero" class="form-control" id="numero" placeholder="Ingresa tu numero telefónico" onkeypress="return soloNumeros(event)">
+        </div>
+        <div class="form-group">
+          <label for="email" class="letras"><p style="color: rgb(184, 50, 50);">Email:</p></label>
+          <input type="email" name="email" class="form-control" id="email" placeholder="Ingresa tu email" >
+        </div>
+        <div class="form-group">
+          <label for="radio" class="letras"><p style="color: rgb(184, 50, 50);">Comuna:</p></label>
+            <select name="comuna" id="selector">
+              <option value="nada">Vacio</option>
+              <option value="maipu">Maipu</option>
+              <option value="cerrillos">Cerrillos</option>
+              <option value="pudahuel">Pudahuel</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <label for="clave" class="letras"><p style="color: rgb(184, 50, 50);">Password:</p></label>
+          <input type="password" name="clave" class="form-control" id="clave" placeholder="Ingresa tu clave"  >
+          <br>
+        </div>
+        <button class="btn btn-secondary" type="button" onclick="mostrarClave()">Mostrar</button>
+        <button type="submit" class="btn btn-primary" value="Enviar" onclick="confirmar()">Enviar</button>
+      </form>
+  </div>
+</div>
+
+{% endblock %}
